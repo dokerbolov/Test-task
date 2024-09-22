@@ -1,0 +1,19 @@
+{
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "Controllers/",
+            "Config\\": "config/",
+            "Helpers\\": "Helpers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yeldos",
+            "email": "proface19@gmail.com"
+        }
+    ],
+  "require": {
+    "ext-pdo": "*"
+  }
+}
