@@ -1,0 +1,11 @@
+[2024-09-25 20:47:05] [INFO] - Database connection established.
+[2024-09-25 20:47:05] [INFO] - Successfully executed SQL query. SQL: CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+    group_name VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+[2024-09-25 20:47:05] [WARNING] - Could not execute the query: SQLSTATE[HY000]: General error

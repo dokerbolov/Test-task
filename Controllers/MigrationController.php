@@ -27,7 +27,7 @@ class MigrationController
             if (is_file($filePath)) {
                 $content = file_get_contents($filePath);
                 if($content != ''){
-                    $this->database->execSql($content);
+                    $this->db->execSql($content);
                 }
             }
         }
