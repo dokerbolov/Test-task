@@ -2,16 +2,29 @@
 
 require_once 'vendor/autoload.php';
 
+use Routes\Api;
+use Config\Database;
 use Controllers\MigrationController;
-use Helpers\Logger;
+use Controllers\TeacherController;
+use Controllers\StudentController;
 
-class index
+class Index
 {
+    /**
+     * @throws Exception
+     */
     public function __construct()
     {
-        $migrationController = new MigrationController();
+        $database = new Database();
+
+        $migrationController = new MigrationController($database);
         $migrationController->migrate();
+//
+//        $teacherController = new TeacherController($database);
+//        $studentController = new StudentController($database);
+//
+//        $api = new Api($teacherController, $studentController);
     }
 }
 
-new index();
+new Index();

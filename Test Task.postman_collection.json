@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "c56897f7-0351-4c33-8f07-c267195085a6",
+		"name": "Test Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10939433"
+	},
+	"item": [
+		{
+			"name": "Учитель",
+			"item": [
+				{
+					"name": "Список студентов учителя по его предмету",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/teacher/students?teacherId=s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"teacher",
+								"students"
+							],
+							"query": [
+								{
+									"key": "teacherId",
+									"value": "s"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Поставить оценку студенту по его предмету",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "studentId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "courseId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "grade",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "teacherId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "gradeId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/teacher/grade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"teacher",
+								"grade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Посмотреть список оценок по предмету",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/teacher/grade-history?courseId=1&teacherId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"teacher",
+								"grade-history"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "1"
+								},
+								{
+									"key": "teacherId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Студент",
+			"item": [
+				{
+					"name": "Оценки по предметам",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/student/grades?studentId=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"grades"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Просмотр средней оценки по предмету",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/student/average-grades?studentId=10&courseId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"student",
+								"average-grades"
+							],
+							"query": [
+								{
+									"key": "studentId",
+									"value": "10"
+								},
+								{
+									"key": "courseId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

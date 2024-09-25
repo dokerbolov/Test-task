@@ -4,7 +4,8 @@
         "psr-4": {
             "Controllers\\": "Controllers/",
             "Config\\": "config/",
-            "Helpers\\": "Helpers/"
+            "Helpers\\": "Helpers/",
+            "Routes\\": "routes/"
         }
     },
     "authors": [
@@ -14,6 +15,7 @@
         }
     ],
   "require": {
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-json": "*"
   }
 }

@@ -6,13 +6,16 @@ use Config\Database;
 
 class MigrationController
 {
-    private $database;
+    private $db;
 
-    public function __construct()
+    public function __construct($db)
     {
-        $this->database = new Database();
+        $this->db = $db;
     }
 
+    /**
+     * @throws \Exception
+     */
     public function migrate(){
         $path = 'migrations';
         $files = scandir('migrations');
@@ -23,7 +26,9 @@ class MigrationController
             $filePath = $path . DIRECTORY_SEPARATOR . $file;
             if (is_file($filePath)) {
                 $content = file_get_contents($filePath);
-                $this->database->execSql($content);
+                if($content != ''){
+                    $this->database->execSql($content);
+                }
             }
         }
     }
